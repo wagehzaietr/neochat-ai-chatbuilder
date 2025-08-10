@@ -1,6 +1,6 @@
 import { google } from '@ai-sdk/google';
-import { streamText, UIMessage, convertToModelMessages, tool } from 'ai';
-import { z } from 'zod';
+import { streamText, UIMessage, convertToModelMessages } from 'ai';
+
 
 export const maxDuration = 30;
 

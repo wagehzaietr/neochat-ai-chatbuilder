@@ -24,7 +24,6 @@ function Header({
 }: {
   menuState: boolean;
   setMenuState: (state: boolean) => void;
-  menuItems: any[];
 }) {
   const { setTheme } = useTheme();
   return (

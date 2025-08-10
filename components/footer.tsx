@@ -1,4 +1,4 @@
-import { Logo } from '@/components/logo'
+
 import Link from 'next/link'
 import { TextShimmer } from './ui/text-shimmer'
 

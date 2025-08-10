@@ -190,7 +190,7 @@ export default function Chat() {
                   {subscribe && (
                     <div className="mt-5 p-4 bg-yellow-50/80 dark:bg-yellow-900/20 border border-yellow-200/70 dark:border-yellow-800 rounded-xl">
                       <p className="text-sm text-yellow-800 dark:text-yellow-200">
-                        You've reached your message limit. Please subscribe to
+                        You&apos;ve reached your message limit. Please subscribe to
                         continue chatting.
                       </p>
                     </div>

@@ -3,7 +3,7 @@ import { cn } from '../lib/utils'
 import TrueFocus from './ui/TrueFocus';
 
 
-export const Logo = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
+export const Logo = () => {
     return (
        <h1>
          <TrueFocus/>  
@@ -11,7 +11,7 @@ export const Logo = ({ className, uniColor }: { className?: string; uniColor?: b
     )
 }
 
-export const BotPic = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
+export const BotPic = ({ className }: { className?: string }) => {
     return (
       <Image
         src="/botimg1.svg"

@@ -29,7 +29,6 @@ export default function HeroSection() {
       <Header
         menuState={menuState}
         setMenuState={setMenuState}
-        menuItems={[]}
       />
 
       {/* HERO */}
