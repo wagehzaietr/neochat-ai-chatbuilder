@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "./Header";
+import { useTranslation } from "react-i18next";
 
 type Partner = { name: string; src: string };
 
@@ -23,6 +24,7 @@ const PARTNERS: Partner[] = [
 
 export default function HeroSection() {
   const [menuState, setMenuState] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <main className="relative">
@@ -37,20 +39,19 @@ export default function HeroSection() {
           <div className="max-w-3xl text-center sm:mx-auto lg:mr-auto lg:w-4/5">
             <p className="inline-flex items-center gap-2 rounded-full border border-zinc-900/10 bg-white/60 px-3 py-1 text-xs font-medium text-zinc-700/90 backdrop-blur dark:border-white/10 dark:bg-zinc-900/50 dark:text-zinc-300">
               <span className="size-1.5 rounded-full bg-emerald-500" />
-              Visual builder for AI assistants
+              {t("hero.badge")}
             </p>
 
             <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight sm:text-5xl xl:text-6xl xl:[line-height:1.1]">
-              Build AI
+              {t("hero.titleStart")}
               <span className="mx-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-                chatbots
+                {t("hero.titleMid")}
               </span>
-              visually
+              {t("hero.titleEnd")}
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-7 text-zinc-600 dark:text-white sm:text-lg">
-              Create, customize, and deploy intelligent assistants without code.
-              Design flows, connect data, and ship in minutes—not weeks.
+              {t("hero.subtitle")}
             </p>
 
             <div className="mt-8 flex items-center justify-center gap-3 sm:gap-4">
@@ -61,12 +62,12 @@ export default function HeroSection() {
                   rel="noreferrer"
                 >
                   <Rocket className="size-4" />
-                  <span className="text-nowrap">Start building</span>
+                  <span className="text-nowrap">{t("hero.ctaPrimary")}</span>
                 </Link>
               </Button>
               <Button size="lg" variant="ghost" asChild>
                 <Link href="/demo">
-                  <span className="text-nowrap">Watch demo</span>
+                  <span className="text-nowrap">{t("hero.ctaSecondary")}</span>
                 </Link>
               </Button>
             </div>
@@ -80,7 +81,7 @@ export default function HeroSection() {
       <section className="relative z-10 py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-center text-sm font-medium text-zinc-600 dark:text-zinc-400">
-            Trusted by teams at
+            {t("hero.trustedBy")}
           </h2>
 
           <ul className="mx-auto mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-x-10 gap-y-8 sm:gap-x-16 sm:gap-y-10">

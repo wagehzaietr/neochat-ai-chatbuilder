@@ -3,6 +3,7 @@
 import { useChat } from "@ai-sdk/react";
 import { useState, useRef, useEffect } from "react";
 import { TextShimmer } from "./ui/text-shimmer";
+import { useTranslation } from "react-i18next";
 
 import {
   X,
@@ -26,6 +27,7 @@ export default function Chat() {
   const [messageCount, setMessageCount] = useState<number>(0);
   const [subscribe, setSubscribe] = useState<boolean>(false);
   const MESSAGE_LIMIT = 15; // Set your message limit here
+  const { t } = useTranslation();
 
   // Load message count from localStorage on component mount
   useEffect(() => {
@@ -106,7 +108,7 @@ export default function Chat() {
           tabIndex={-1}
           role="dialog"
           aria-modal="true"
-          aria-label="AI chat dialog"
+          aria-label={t('chat.dialogAria')}
         >
           {/* Chat Container */}
           <div className="relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl rounded-2xl shadow-[0_20px_60px_-20px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:ring-white/10 border border-white/50 dark:border-white/5 w-full max-w-2xl h-[640px] flex flex-col animate-in slide-in-from-bottom-4 duration-300 overflow-hidden">
@@ -122,7 +124,7 @@ export default function Chat() {
                 <div className="leading-tight">
                   <div className="flex items-center gap-2">
                     <h2 className="font-semibold text-zinc-900 dark:text-zinc-100">
-                      AI Assistant
+                      {t('chat.header.title')}
                     </h2>
                     <span
                       className={`inline-flex items-center gap-1 px-2 py-0.5 text-[11px] rounded-full ${
@@ -136,13 +138,13 @@ export default function Chat() {
                           isLoading ? "bg-amber-500" : "bg-emerald-500"
                         }`}
                       />
-                      {isLoading ? "Typing" : "Online"}
+                      {isLoading ? t('chat.header.typing') : t('chat.header.online')}
                     </span>
                   </div>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">
                     {subscribe
-                      ? "Demo ended with our chatbot"
-                      : "Enjoying our chat?"}
+                      ? t('chat.header.demoEnded')
+                      : t('chat.header.enjoyingChat')}
                   </p>
                 </div>
               </div>
@@ -151,8 +153,8 @@ export default function Chat() {
                   <button
                     onClick={resetMessageCount}
                     className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors duration-200 group"
-                    aria-label="Reset message count"
-                    title="Reset message count (dev only)"
+                    aria-label={t('chat.resetAria')}
+                    title={t('chat.resetTitle')}
                   >
                     <RefreshCw className="w-5 h-5 text-zinc-500 group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-200" />
                   </button>
@@ -160,7 +162,7 @@ export default function Chat() {
                 <button
                   onClick={() => setModalOpen(false)}
                   className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors duration-200 group"
-                  aria-label="Close chat"
+                  aria-label={t('chat.closeAria')}
                 >
                   <X className="w-5 h-5 text-zinc-500 group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-200" />
                 </button>
@@ -181,17 +183,16 @@ export default function Chat() {
                     </div>
                   </div>
                   <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
-                    Start a conversation
+                    {t('chat.startConversation')}
                   </h3>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-sm">
-                    I’m a chatbot ready to help. Ask anything to get started.
+                    {t('chat.startConversationDescription')}
                   </p>
 
                   {subscribe && (
                     <div className="mt-5 p-4 bg-yellow-50/80 dark:bg-yellow-900/20 border border-yellow-200/70 dark:border-yellow-800 rounded-xl">
                       <p className="text-sm text-yellow-800 dark:text-yellow-200">
-                        You&apos;ve reached your message limit. Please subscribe to
-                        continue chatting.
+                        {t('chat.demoEndedDescription')}
                       </p>
                     </div>
                   )}
@@ -261,7 +262,7 @@ export default function Chat() {
               {isLoading && (
                 <div className="flex justify-start">
                   <TextShimmer className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 bg-white/80 dark:bg-zinc-800/70 border border-zinc-200/60 dark:border-zinc-700/70 text-zinc-600 dark:text-zinc-300">
-                    typing...
+                    {t('chat.loading')}
                   </TextShimmer>
                 </div>
               )}
@@ -273,14 +274,14 @@ export default function Chat() {
                       <Sparkles className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                       <span className="text-sm font-medium text-purple-800 dark:text-purple-200">
                         {subscribe
-                          ? "Demo ended with our chatbot"
-                          : "Enjoying our chat?"}
+                          ? t('chat.demoEnded')
+                          : t('chat.enjoyingChat')}
                       </span>
                     </div>
                     <p className="text-xs text-purple-700 dark:text-purple-300 mb-2">
                       {subscribe
-                        ? "You've reached your message limit. Create your own AI chatbot now."
-                        : "Build your own AI chatbot in minutes!"}
+                        ? t('chat.demoEndedDescription')
+                        : t('chat.buildYourOwnChatbot')}
                     </p>
                     <div className="flex items-center gap-1 text-purple-600 dark:text-purple-400">
                       <Link
@@ -292,7 +293,7 @@ export default function Chat() {
                         target={subscribe ? "_self" : "_blank"}
                         className="underline hover:text-purple-700 dark:hover:text-purple-300"
                       >
-                        {subscribe ? "Click here now" : "Build your own now"}
+                        {subscribe ? t('chat.subscribeNow') : t('chat.buildYourOwnNow')}
                       </Link>
                       <ArrowRight className="w-3 h-3" />
                     </div>
@@ -313,14 +314,14 @@ export default function Chat() {
                     value={input}
                     placeholder={
                       isLoading
-                        ? "AI is thinking..."
+                        ? t('chat.placeholder.thinking')
                         : subscribe
-                        ? "Subscribe to continue chatting..."
-                        : "Type your message..."
+                        ? t('chat.placeholder.subscribe')
+                        : t('chat.placeholder.type')
                     }
                     onChange={(e) => setInput(e.target.value)}
                     disabled={isLoading || subscribe}
-                    aria-label="Type your message"
+                    aria-label={t('chat.aria.input')}
                   />
                   {/* Decorative right inset for input */}
                   <div className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-lg bg-gradient-to-br from-blue-500/10 to-indigo-500/10 dark:from-blue-400/10 dark:to-indigo-400/10" />
@@ -329,7 +330,7 @@ export default function Chat() {
                   type="submit"
                   disabled={!input.trim() || isLoading || subscribe}
                   className="h-12 w-12 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-600/90 hover:to-indigo-600/90 disabled:from-zinc-300 disabled:to-zinc-400 dark:disabled:from-zinc-700 dark:disabled:to-zinc-800 text-white transition-all duration-200 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 disabled:transform-none shadow-md"
-                  aria-label="Send message"
+                  aria-label={t('chat.aria.send')}
                 >
                   <Send className="w-4 h-4" />
                 </button>
@@ -337,7 +338,7 @@ export default function Chat() {
 
               {!subscribe && (
                 <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-2 text-center">
-                  Messages: {messageCount}/{MESSAGE_LIMIT}
+                  {t('chat.messagesCount', { count: messageCount, limit: MESSAGE_LIMIT })}
                 </div>
               )}
             </div>
@@ -349,11 +350,11 @@ export default function Chat() {
       <button
         onClick={() => setModalOpen(true)}
         className="fixed cursor-pointer bottom-6 right-6 w-14 h-14 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95 flex items-center justify-center group z-40 bg-gradient-to-br from-fuchsia-500 to-indigo-600 hover:from-fuchsia-500/90 hover:to-indigo-600/90"
-        aria-label="Open chat"
+        aria-label={t('chat.openChat')}
       >
         <MessageCircle className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-200" />
         <div className="absolute inset-0 rounded-2xl bg-fuchsia-500/40 animate-ping opacity-20" />
-        <span className="sr-only">Open AI chat</span>
+        <span className="sr-only">{t('chat.openChatSr')}</span>
       </button>
     </>
   );

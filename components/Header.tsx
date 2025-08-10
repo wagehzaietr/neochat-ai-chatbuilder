@@ -5,6 +5,7 @@ import { Logo } from "@/components/logo";
 import { Menu, X } from "lucide-react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -14,9 +15,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const menuItems = [
-  { name: "Pricing", href: "#" },
-  { name: "Builder", href: "https://bgremoverwz.netlify.app" },
-  { name: "Features", href: "#" },
+  { key: "pricing", href: "#" },
+  { key: "builder", href: "https://bgremoverwz.netlify.app" },
+  { key: "features", href: "#" },
 ];
 function Header({
   menuState,
@@ -26,6 +27,10 @@ function Header({
   setMenuState: (state: boolean) => void;
 }) {
   const { setTheme } = useTheme();
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (lng: "en" | "ar") => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <header>
       <nav
@@ -45,7 +50,11 @@ function Header({
 
               <button
                 onClick={() => setMenuState(!menuState)}
-                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                aria-label={
+                  menuState == true
+                    ? t("header.aria.closeMenu")
+                    : t("header.aria.openMenu")
+                }
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
                 <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
@@ -62,7 +71,7 @@ function Header({
                         href={item.href}
                         className="text-foreground hover:text-foreground block duration-150"
                       >
-                        <span>{item.name}</span>
+                        <span>{t(`header.menu.${item.key}`)}</span>
                       </Link>
                     </li>
                   ))}
@@ -73,15 +82,32 @@ function Header({
                   <Button variant="outline" size="icon">
                     <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                     <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                    <span className="sr-only">Toggle theme</span>
+                    <span className="sr-only">{t("header.theme.toggle")}</span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuItem onClick={() => setTheme("dark")}>
-                    Dark
+                    {t("header.theme.dark")}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setTheme("system")}>
-                    System
+                    {t("header.theme.system")}
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              {/* Language Switcher */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="px-3">
+                    {i18n.language?.startsWith("ar") ? t("header.language.ar") : t("header.language.en")}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={() => changeLanguage("en")}>
+                    {t("header.language.en")}
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => changeLanguage("ar")}>
+                    {t("header.language.ar")}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>

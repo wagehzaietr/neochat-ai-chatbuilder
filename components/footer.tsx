@@ -1,17 +1,20 @@
+"use client"
 
 import Link from 'next/link'
 import { TextShimmer } from './ui/text-shimmer'
+import { useTranslation } from 'react-i18next'
 
 const links = [
-  { title: 'Features', href: '#' },
-  { title: 'Solution', href: '#' },
-  { title: 'Customers', href: '#' },
-  { title: 'Pricing', href: '#' },
-  { title: 'Help', href: '#' },
-  { title: 'About', href: '#' },
+  { key: 'features', href: '#' },
+  { key: 'solution', href: '#' },
+  { key: 'customers', href: '#' },
+  { key: 'pricing', href: '#' },
+  { key: 'help', href: '#' },
+  { key: 'about', href: '#' },
 ]
 
 export default function FooterSection() {
+  const { t } = useTranslation()
   return (
     <footer className="relative py-16 md:py-28">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-zinc-50/60 to-transparent dark:via-zinc-900/50" />
@@ -38,7 +41,7 @@ export default function FooterSection() {
                   href={link.href}
                   className="rounded-lg px-3 py-2 text-sm font-semibold text-zinc-600 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 dark:text-zinc-300"
                 >
-                  {link.title}
+                  {t(`footer.links.${link.key}`)}
                 </Link>
               </li>
             ))}
@@ -138,7 +141,7 @@ export default function FooterSection() {
 
         {/* Copyright */}
         <span className="block text-center text-xs sm:text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Tailark, All rights reserved
+          {t('footer.copyright', { year: new Date().getFullYear() })}
         </span>
       </div>
     </footer>

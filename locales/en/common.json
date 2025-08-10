@@ -1,0 +1,94 @@
+{
+  "header": {
+    "menu": {
+      "pricing": "Pricing",
+      "builder": "Builder",
+      "features": "Features"
+    },
+    "aria": {
+      "openMenu": "Open Menu",
+      "closeMenu": "Close Menu"
+    },
+    "theme": {
+      "toggle": "Toggle theme",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "language": {
+      "switch": "Language",
+      "en": "English",
+      "ar": "Arabic"
+    }
+  },
+  "hero": {
+    "badge": "Visual builder for AI assistants",
+    "titleStart": "Build AI",
+    "titleMid": "chatbots",
+    "titleEnd": "visually",
+    "subtitle": "Create, customize, and deploy intelligent assistants without code. Design flows, connect data, and ship in minutes—not weeks.",
+    "ctaPrimary": "Start building",
+    "ctaSecondary": "Watch demo",
+    "trustedBy": "Trusted by teams at"
+  },
+  "features": {
+    "why": "Why choose us",
+    "title": "Everything you need to build with confidence",
+    "subtitle": "Beautiful by default, customizable by design, and engineered for performance.",
+    "items": {
+      "fast": {
+        "title": "Blazing Fast",
+        "desc": "Optimized rendering and caching deliver instant feedback from first paint to heavy workloads."
+      },
+      "powerful": {
+        "title": "Powerful",
+        "desc": "Type‑safe APIs, streaming, and edge‑ready architecture so you can scale without rewrites."
+      },
+      "security": {
+        "title": "Security",
+        "desc": "Least‑privilege defaults, secrets isolation, and end‑to‑end encryption where it matters."
+      },
+      "customization": {
+        "title": "Customization",
+        "desc": "Composable primitives and theming that match your brand—not the other way around."
+      },
+      "control": {
+        "title": "Control",
+        "desc": "Granular roles, environments, rate limits, and audit trails for confident governance."
+      },
+      "ai": {
+        "title": "Built for AI",
+        "desc": "Token‑aware streaming, function calling, and vector‑native workflows baked in."
+      }
+    }
+  },
+  "footer": {
+    "links": {
+      "features": "Features",
+      "solution": "Solution",
+      "customers": "Customers",
+      "pricing": "Pricing",
+      "help": "Help",
+      "about": "About"
+    },
+    "copyright": "© {{year}} Tailark, All rights reserved"
+  },
+  "chat": {
+    "dialogAria": "AI chat dialog",
+    "openChat": "Open chat",
+    "openChatSr": "Open AI chat",
+    "placeholder": {
+      "thinking": "AI is thinking...",
+      "subscribe": "Subscribe to continue chatting...",
+      "type": "Type your message..."
+    },
+    "aria": {
+      "input": "Type your message",
+      "send": "Send message"
+    },
+    "messagesCount": "Messages: {{count}}/{{limit}}",
+    "subscribe": {
+      "ctaNow": "Click here now",
+      "buildNow": "Build your own now"
+    }
+  }
+}
