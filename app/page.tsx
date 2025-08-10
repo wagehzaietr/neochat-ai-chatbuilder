@@ -1,7 +1,13 @@
-import HeroSection from "@/components/hero-section";
+
 import ChatBot from "@/components/Chatbot";
 import Features from "@/components/features-4";
 import FooterSection from "@/components/footer";
+import dynamic from "next/dynamic";
+
+const HeroSection = dynamic(() => import("@/components/hero-section"), {
+  ssr: false,
+});
+
 export default function Home() {
   return (
     <>

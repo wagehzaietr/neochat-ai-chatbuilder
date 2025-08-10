@@ -104,9 +104,6 @@ export default function HeroSection() {
           </ul>
         </div>
       </section>
-
-      {/* Optionally place your <Features /> below */}
-      {/* <Features /> */}
     </main>
   );
 }
