@@ -1,6 +1,6 @@
-# 🤖 PersonaForge — AI Chatbot Builder
+# 🤖 NeoChat Ai — AI Chatbot Builder
 
-**PersonaForge** is a modern web app that lets anyone create and customize their own AI chatbot with unique **personas**, **moods**, **images**, and **voices**.  
+**NeoChat Ai** is a modern web app that lets anyone create and customize their own AI chatbot with unique **personas**, **moods**, **images**, and **voices**.  
 Built with **Next.js 15** for speed, **shadcn/ui** for a polished aesthetic, and powered by Google’s **Gemini AI** for intelligent, natural conversation.
 
 ---
