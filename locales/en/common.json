@@ -103,7 +103,7 @@
     "startConversation": "Start a conversation",
     "startConversationDescription": "Ask anything to get started. Your messages appear here.",
     "demoEndedDescription": "You've reached the demo limit for this session.",
-    "loading": "Loading...",
+    "loading": "typing...",
     "demoEnded": "Demo ended",
     "enjoyingChat": "Enjoying the chat?",
     "buildYourOwnChatbot": "Build your own AI chatbot",

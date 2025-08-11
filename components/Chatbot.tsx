@@ -26,7 +26,7 @@ export default function Chat() {
   const [isLoading, setIsLoading] = useState(false);
   const [messageCount, setMessageCount] = useState<number>(0);
   const [subscribe, setSubscribe] = useState<boolean>(false);
-  const MESSAGE_LIMIT = 15; // Set your message limit here
+  const MESSAGE_LIMIT = 5; // Set your message limit here
   const { t } = useTranslation();
 
   // Load message count from localStorage on component mount
