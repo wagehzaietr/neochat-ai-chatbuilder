@@ -57,7 +57,7 @@ export default function HeroSection() {
             <div className="mt-8 flex items-center justify-center gap-3 sm:gap-4">
               <Button size="lg" asChild>
                 <Link
-                  href="https://bgremoverwz.netlify.app"
+                  href="https://builder-page.netlify.app"
                   target="_blank"
                   rel="noreferrer"
                 >

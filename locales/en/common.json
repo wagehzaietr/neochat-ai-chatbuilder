@@ -89,6 +89,25 @@
     "subscribe": {
       "ctaNow": "Click here now",
       "buildNow": "Build your own now"
-    }
+    },
+    "header": {
+      "title": "NeoChat AI",
+      "typing": "typing...",
+      "online": "online",
+      "demoEnded": "Demo ended",
+      "enjoyingChat": "Enjoying the chat?"
+    },
+    "resetAria": "Reset conversation",
+    "resetTitle": "Reset",
+    "closeAria": "Close chat",
+    "startConversation": "Start a conversation",
+    "startConversationDescription": "Ask anything to get started. Your messages appear here.",
+    "demoEndedDescription": "You've reached the demo limit for this session.",
+    "loading": "Loading...",
+    "demoEnded": "Demo ended",
+    "enjoyingChat": "Enjoying the chat?",
+    "buildYourOwnChatbot": "Build your own AI chatbot",
+    "subscribeNow": "Subscribe now",
+    "buildYourOwnNow": "Build your own now"
   }
 }

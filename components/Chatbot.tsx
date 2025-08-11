@@ -288,7 +288,7 @@ export default function Chat() {
                         href={
                           subscribe
                             ? "/subscribe"
-                            : "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat"
+                            : "https://builder-page.netlify.app"
                         }
                         target={subscribe ? "_self" : "_blank"}
                         className="underline hover:text-purple-700 dark:hover:text-purple-300"

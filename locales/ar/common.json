@@ -89,6 +89,25 @@
     "subscribe": {
       "ctaNow": "اضغط هنا الآن",
       "buildNow": "ابنِ روبوتك الآن"
-    }
+    },
+    "header": {
+      "title": "نيوتشات AI",
+      "typing": "يكتب...",
+      "online": "متصل",
+      "demoEnded": "انتهى العرض التجريبي",
+      "enjoyingChat": "هل تستمتع بالدردشة؟"
+    },
+    "resetAria": "إعادة تعيين المحادثة",
+    "resetTitle": "إعادة تعيين",
+    "closeAria": "إغلاق الدردشة",
+    "startConversation": "ابدأ محادثة",
+    "startConversationDescription": "اسأل أي شيء للبدء. ستظهر رسائلك هنا.",
+    "demoEndedDescription": "لقد وصلت إلى حد العرض التجريبي لهذه الجلسة.",
+    "loading": "جارٍ التحميل...",
+    "demoEnded": "انتهى العرض التجريبي",
+    "enjoyingChat": "هل تستمتع بالدردشة؟",
+    "buildYourOwnChatbot": "ابنِ روبوت الدردشة الذكي الخاص بك",
+    "subscribeNow": "اشترك الآن",
+    "buildYourOwnNow": "ابنِ روبوتك الآن"
   }
 }

@@ -16,7 +16,7 @@ import {
 
 const menuItems = [
   { key: "pricing", href: "#" },
-  { key: "builder", href: "https://bgremoverwz.netlify.app" },
+  { key: "builder", href: "https://builder-page.netlify.app" },
   { key: "features", href: "#" },
 ];
 function Header({
